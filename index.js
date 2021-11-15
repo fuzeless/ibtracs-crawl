@@ -37,7 +37,7 @@ const fetch = async (links, inputs) => {
     const csv = tableToCsv(table);
 
     finalCsv = finalCsv.concat(csv.split('\n').slice(2).map(str => (
-      str !== '' ? `"${name}","${id.split().slice(1, id.length - 1).join()}",`.concat(str) : str
+      str !== '' ? `"${name}","${id.split('').slice(1, id.length - 1).join('')}",`.concat(str) : str
     )).join('\n'));
     fs.writeFileSync(path + `${links.split('.')[0]}.csv`, finalCsv);
   };
