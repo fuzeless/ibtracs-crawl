@@ -9,7 +9,7 @@ const prompt = require("prompt-sync")({ sigint: true });
 //With readline
 
 const fetch = async (links, inputs) => {
-  let finalCsv = '';
+  let finalCsv = '"NAME","ID","BASIN","ISO_TIME_________","NATURE","LAT","LON","WMO WIND","WMO PRES","USA WIND","TOKYO WIND","TOKYO PRES","CMA WIND","CMA PRES","HKO WIND","HKO PRES"\n';
   for (let index = 0; index < inputs.length; index += 1) {
     console.log(`Fetching ${inputs[index]} ...`);
     const response = await axios(inputs[index]);
